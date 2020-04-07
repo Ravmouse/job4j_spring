@@ -17,31 +17,30 @@
 
     <body>
         <div class="container">
-            <h2>Правонарушения</h2>
+            <h2>Добавить правонарушение</h2>
             <p></p><p></p>
-            <table class="table table-bordered" id="tab">
-                <thead>
-                    <tr>
-                        <th>Номер</th>
-                        <th>Название</th>
-                        <th>Сообщение</th>
-                        <th>Адрес</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${accidents}" var="accs" varStatus="status">
-                        <tr>
-                            <td>${accs.id}</td>
-                            <td>${accs.name}</td>
-                            <td>${accs.text}</td>
-                            <td>${accs.address}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-            <form action="<c:url value="/accidents/add"/>">
-                <input type="submit" class="btn btn-outline-primary" value="Добавить">
-            </form>
+            <div class="in_div">
+                <form action="<c:url value="/accidents/add"/>" method="post" id="frm">
+                    <div class="elem_div">
+                        <label for="name">Название:</label>
+                        <input class="form-control" id="name" name="name" placeholder="Введите название">
+                    </div>
+                    <div class="elem_div">
+                        <label for="text">Сообщение:</label>
+                        <textarea class="form-control" id="text" name="text" placeholder="Введите сообщение"></textarea>
+                    </div>
+                    <div class="elem_div">
+                        <label for="address">Адрес:</label>
+                        <input class="form-control" id="address" name="address" placeholder="Введите адрес">
+                    </div>
+                    <div class="elem_div">
+                        <input type="button" class="btn btn-outline-success" value="Добавить" id="btn_add">
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
+    <footer>
+        <script src="<c:url value='/resources/js/js.js'/>"></script>
+    </footer>
 </html>

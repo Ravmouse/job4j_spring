@@ -12,4 +12,8 @@ public interface Repository extends AutoCloseable {
      * @return список всех правонарушений.
      */
     List<Accident> getAll();
+    /**
+     * @param accident правонарушение.
+     */
+    void add(Accident accident);
 }

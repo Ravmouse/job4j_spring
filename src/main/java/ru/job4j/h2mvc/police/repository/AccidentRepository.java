@@ -33,6 +33,14 @@ public class AccidentRepository implements Repository {
     }
 
     /**
+     * @param accident правонарушение.
+     */
+    @Override
+    public void add(Accident accident) {
+        new Wrapper(factory).perform(session -> session.save(accident));
+    }
+
+    /**
      * @throws Exception искл.
      */
     @Override
