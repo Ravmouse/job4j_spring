@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.job4j.h2mvc.police.repository.Repository;
+import ru.job4j.h2mvc.police.service.AccidentService;
 
 /**
  * @author Vitaly Vasilyev, date: 01.04.2020, e-mail: rav.energ@rambler.ru
@@ -16,13 +17,14 @@ public class IndexController {
     /**
      * Хранилище правонарушений.
      */
-    private final Repository repo;
+//    private final Repository repo;
+    private final AccidentService repo;
 
     /**
      * @param repo хранилище правонарушений.
      */
     @Autowired
-    public IndexController(Repository repo) {
+    public IndexController(AccidentService repo) {
         this.repo = repo;
     }
 

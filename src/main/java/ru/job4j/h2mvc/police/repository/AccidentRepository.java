@@ -13,7 +13,7 @@ import java.util.Optional;
  * @author Vitaly Vasilyev, date: 01.04.2020, e-mail: rav.energ@rambler.ru
  * @version 1.0
  */
-@Component
+//@Component
 public class AccidentRepository implements Repository {
     /**
      * Фабрика сессий.

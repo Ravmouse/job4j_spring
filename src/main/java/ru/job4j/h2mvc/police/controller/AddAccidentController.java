@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.h2mvc.police.entity.Accident;
 import ru.job4j.h2mvc.police.repository.Repository;
+import ru.job4j.h2mvc.police.service.AccidentService;
 
 /**
  * @author Vitaly Vasilyev, date: 05.04.2020, e-mail: rav.energ@rambler.ru
@@ -18,13 +19,14 @@ public class AddAccidentController {
     /**
      * Хранилище правонарушений.
      */
-    private final Repository repo;
+//    private final Repository repo;
+    private final AccidentService repo;
 
     /**
      * @param repo хранилище правонарушений.
      */
     @Autowired
-    public AddAccidentController(Repository repo) {
+    public AddAccidentController(AccidentService repo) {
         this.repo = repo;
     }
 
