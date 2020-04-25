@@ -20,7 +20,7 @@
             <h2>Добавить правонарушение</h2>
             <p></p><p></p>
             <div class="in_div">
-                <form action="<c:url value="/accidents/add"/>" method="post" id="frm">
+                <form action="<c:url value="/accidents/add"/>" method="post" id="frm" modelattribute="accident">
                     <div class="elem_div">
                         <label for="name">Название:</label>
                         <input class="form-control" id="name" name="name" placeholder="Введите название">

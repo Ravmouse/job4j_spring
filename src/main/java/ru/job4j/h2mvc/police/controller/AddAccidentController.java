@@ -2,9 +2,10 @@ package ru.job4j.h2mvc.police.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.h2mvc.police.entity.Accident;
 import ru.job4j.h2mvc.police.repository.Repository;
 import ru.job4j.h2mvc.police.service.AccidentService;
@@ -15,6 +16,7 @@ import ru.job4j.h2mvc.police.service.AccidentService;
  */
 @Controller
 @RequestMapping(value = "/accidents")
+@ControllerAdvice
 public class AddAccidentController {
     /**
      * Хранилище правонарушений.
@@ -39,17 +41,12 @@ public class AddAccidentController {
     }
 
     /**
-     * @param name название.
-     * @param text описание.
-     * @param address адрес.
+     * @param accident правонарушение для добавления в БД.
      * @return перенаправляет на гл.страницу.
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addAccident(
-            @RequestParam("name") String name,
-            @RequestParam("text") String text,
-            @RequestParam("address") String address) {
-        repo.add(new Accident(name, text, address));
+    public String addAccident(@ModelAttribute("accident") Accident accident) {
+        repo.add(accident);
         return "redirect:/accidents";
     }
 }
