@@ -39,9 +39,11 @@
                     </c:forEach>
                 </tbody>
             </table>
-            <form action="<c:url value="/accidents/add"/>">
-                <input type="submit" class="btn btn-outline-primary" value="Добавить">
+            <form action="<c:url value='/accidents/add'/>">
+                <input type="submit" class="btn btn-outline-primary" value="Добавить" style="float: left">
             </form>
+            <input type="button" class="btn btn-outline-primary" value="Выход" style="float: right"
+                   onclick="window.location.href = '<c:url value="/logout"/>'">
         </div>
     </body>
 </html>
