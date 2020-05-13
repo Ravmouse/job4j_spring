@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Accidents</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Правонарушения</h2>
+            <p></p><p></p>
+            <table class="table table-bordered" id="tab">
+                <thead>
+                    <tr>
+                        <th>Номер</th>
+                        <th>Название</th>
+                        <th>Сообщение</th>
+                        <th>Адрес</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each = "acc : ${accidents}">
+                        <td th:text="${acc.id}"></td>
+                        <td th:text="${acc.name}"></td>
+                        <td th:text="${acc.text}"></td>
+                        <td th:text="${acc.address}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <form th:action="@{/accidents/add}">
+                <input type="submit" class="btn btn-outline-primary" value="Добавить" style="float: left">
+            </form>
+            <input type="button" class="btn btn-outline-primary" value="Выход" style="float: right"
+                th:onclick="'window.location.href = \'' + @{/logout} + '\''">
+        </div>
+    </body>
+</html>
