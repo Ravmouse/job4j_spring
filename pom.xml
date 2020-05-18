@@ -14,9 +14,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <db.url>jdbc:postgresql://127.0.0.1:5432/job4j_spring</db.url>
-        <db.username>postgres</db.username>
-        <db.password>password</db.password>
+        <!--<db.url>jdbc:postgresql://127.0.0.1:5432/job4j_spring</db.url>-->
+        <!--<db.username>postgres</db.username>-->
+        <!--<db.password>password</db.password>-->
+
+        <db.url>jdbc:postgresql://ec2-54-228-251-117.eu-west-1.compute.amazonaws.com:5432/d2mam80fff5qfq</db.url>
+        <db.username>puxoagvelsqtkq</db.username>
+        <db.password>151e92061d59a2bbc8d64b27357d117d3ca8676d1c06a8dd75102609575a845f</db.password>
         <db.driver>org.postgresql.Driver</db.driver>
     </properties>
 
@@ -108,6 +112,14 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
             <version>5.3.1.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <version>5.3.2.RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
@@ -271,6 +283,7 @@
                     <driver>${db.driver}</driver>
                     <username>${db.username}</username>
                     <password>${db.password}</password>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                 </configuration>
                 <executions>
                     <execution>

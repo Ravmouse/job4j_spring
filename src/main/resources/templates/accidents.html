@@ -35,9 +35,10 @@
                     </tr>
                 </tbody>
             </table>
-            <form th:action="@{/accidents/add}">
-                <input type="submit" class="btn btn-outline-primary" value="Добавить" style="float: left">
-            </form>
+            <!--<form th:action="@{/accidents/add}">-->
+                <input type="submit" class="btn btn-outline-primary" value="Добавить" style="float: left"
+                th:onclick="'window.location.href = \'' + @{/accidents/add} + '\''">
+            <!--</form>-->
             <input type="button" class="btn btn-outline-primary" value="Выход" style="float: right"
                 th:onclick="'window.location.href = \'' + @{/logout} + '\''">
         </div>

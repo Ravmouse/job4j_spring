@@ -6,3 +6,4 @@ CREATE TABLE accidents (
 );
 INSERT INTO accidents (name, text, address) VALUES ('Авария', 'Событие, которое произошло...', 'г. Васюки');
 INSERT INTO accidents (name, text, address) VALUES ('Кража', 'Кража денег произошла...', 'с. Збруевка');
+INSERT INTO accidents (name, text, address) VALUES ('Мошенничество', 'В минувшую среду сотрудниками по борьбе...', 'г. Клин');
